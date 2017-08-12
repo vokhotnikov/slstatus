@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* how often to update the statusbar (min value == 1) */
-#define UPDATE_INTERVAL 1
+#define UPDATE_INTERVAL 3
 
 /* text to show if no value can be retrieved */
 #define UNKNOWN_STR "n/a"
@@ -45,9 +45,9 @@
 - wifi_essid (wifi essid) [argument: wifi card interface name] */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ temp, "[t %2s°C | ", "/sys/class/thermal/thermal_zone0/temp"    },
-	{ cpu_perc, "CPU %3s%% | ", NULL    },
-	{ ram_perc, "RAM %2s%% | ", NULL    },
-	{ battery_perc, "BAT %2s%% | ", "BAT1"    },
-	{ datetime, "%s]",       "%b %d %H:%M" },
+	{ temp, "[t %2s°C]", "/sys/class/thermal/thermal_zone0/temp"    },
+	{ cpu_perc, "[C %3s%%]", NULL    },
+	{ ram_perc, "[M %2s%%]", NULL    },
+	{ battery_perc, "[BAT %2s%%]", "BAT1"    },
+	{ datetime, "[%s]",       "%b %d %H:%M" },
 };
